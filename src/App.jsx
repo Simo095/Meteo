@@ -12,17 +12,17 @@ function App() {
     <>
       <div
         className="App d-flex gradient-background overflow-y-scroll"
-        style={{ height: "100vh" }}>
+        style={{ height: "100vh" }}
+      >
         <BrowserRouter>
           <Container className="text-center d-flex flex-column">
             <Header></Header>
             <Routes>
+              <Route path="/Meteo" element={<Ricerca></Ricerca>}></Route>
               <Route
-                path="/"
-                element={<Ricerca></Ricerca>}></Route>
-              <Route
-                path="/dettagli-meteo"
-                element={<FetchMeteo></FetchMeteo>}></Route>
+                path="/Meteo/dettagli-meteo"
+                element={<FetchMeteo></FetchMeteo>}
+              ></Route>
             </Routes>
 
             <Footer></Footer>
