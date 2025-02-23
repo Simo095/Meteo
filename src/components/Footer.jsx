@@ -5,13 +5,18 @@ const Footer = () => {
   return (
     <Container
       className="mt-5 pt-4"
-      style={{ color: "rgba(0, 0, 0, 0.6)", background: "rgba(0,0,0,0.2)", borderRadius: 30 }}>
+      style={{
+        color: "rgba(0, 0, 0, 0.6)",
+        background: "rgba(0,0,0,0.2)",
+        borderRadius: 30,
+      }}
+    >
       <Row>
         <Col>
           <p>&copy; 2023 EpicMeteo</p>
         </Col>
         <Col>
-          <Link to="/">
+          <Link to="/Meteo/">
             <Button className="btn-gen">Back to search</Button>
           </Link>
         </Col>

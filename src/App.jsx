@@ -18,10 +18,10 @@ function App() {
           <Container className="text-center d-flex flex-column">
             <Header></Header>
             <Routes>
-              <Route path="/Meteo" element={<Ricerca></Ricerca>}></Route>
+              <Route path="/Meteo" element={<Ricerca />}></Route>
               <Route
                 path="/Meteo/dettagli-meteo"
-                element={<FetchMeteo></FetchMeteo>}
+                element={<FetchMeteo />}
               ></Route>
             </Routes>
 

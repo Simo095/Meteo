@@ -13,9 +13,9 @@ const CittaDaSelezionare = ({ elenco }) => {
     dispatch({
       type: "CITTA_RICHIESTA",
 
-      payload: coord
+      payload: coord,
     });
-    navigate(`/dettagli-meteo`);
+    navigate(`/Meteo/dettagli-meteo`);
     ///${lat}/${lon} da usare con use params
   };
   return (
@@ -30,7 +30,8 @@ const CittaDaSelezionare = ({ elenco }) => {
                 className="menu-citta"
                 onClick={() => {
                   handleOnClick(elem.lat, elem.lon, elem.name);
-                }}>
+                }}
+              >
                 <div className="d-flex justify-content-between">
                   <p>{elem.name}</p>
                   <p>
