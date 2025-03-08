@@ -17,6 +17,7 @@ function App() {
         <BrowserRouter>
           <Container className="text-center d-flex flex-column">
             <Header></Header>
+
             <Routes>
               <Route path="/Meteo" element={<Ricerca />}></Route>
               <Route

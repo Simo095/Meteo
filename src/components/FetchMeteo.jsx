@@ -11,7 +11,7 @@ import { Spinner } from "react-bootstrap";
 
 const FetchMeteo = () => {
   //gestione della stringa salvata nello store per le coordinate
-  const coordinate = useSelector(state => state.datiFormCitta.coord);
+  const coordinate = useSelector((state) => state.datiFormCitta.coord);
   const str = coordinate.split(" ");
   const lat = str[0];
   const lon = str[1];
@@ -27,7 +27,7 @@ const FetchMeteo = () => {
   const fetchDettagli = async () => {
     try {
       const response = await fetch(
-        `https:api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}10&appid=9c0ece9ecabc211f28776c581ffc21e8`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}10&appid=9c0ece9ecabc211f28776c581ffc21e8`
       );
       if (response.ok) {
         const previsione = await response.json();
@@ -40,7 +40,7 @@ const FetchMeteo = () => {
           umidita: previsione.main.humidity,
           minima: (previsione.main.temp_min - 273.15).toFixed(1),
           massima: (previsione.main.temp_max - 273.15).toFixed(1),
-          descrizione: previsione.weather[0].description
+          descrizione: previsione.weather[0].description,
         };
         setTemp({ objToday });
       } else {
@@ -68,7 +68,7 @@ const FetchMeteo = () => {
           secondo: secondo,
           terzo: terzo,
           quarto: quarto,
-          quinto: quinto
+          quinto: quinto,
         };
         setProssimiGiorni(objGiorni);
       } else {
@@ -96,7 +96,8 @@ const FetchMeteo = () => {
           massima={temp.objToday.massima}
           umidita={temp.objToday.umidita}
           descrizione={temp.objToday.descrizione}
-          img={temp.objToday.img}></PrevisioniOggi>
+          img={temp.objToday.img}
+        ></PrevisioniOggi>
       ) : (
         <PrevisioniOggi
           percepita="-- --"
@@ -104,16 +105,14 @@ const FetchMeteo = () => {
           massima="-- --"
           umidita="-- --"
           descrizione="-- --"
-          img="-- --"></PrevisioniOggi>
+          img="-- --"
+        ></PrevisioniOggi>
       )}
       {prossimiGiorni ? (
         <ProssimiGiorni prossimi={prossimiGiorni}></ProssimiGiorni>
       ) : (
         <div className="d-flex justify-content-center align-items-center p-5">
-          <Spinner
-            animation="border"
-            variant="light"
-          />
+          <Spinner animation="border" variant="light" />
         </div>
       )}
     </div>
