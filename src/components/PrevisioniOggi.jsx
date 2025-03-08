@@ -1,50 +1,51 @@
-import { Card, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
+import {
+  WiThermometer,
+  WiHumidity,
+  WiSnowflakeCold,
+  WiHot,
+} from "react-icons/wi";
+import { getWeatherIcon, getWeatherTranslation } from "../asset/js";
 
-const PrevisioniOggi = ({ percepita, minima, massima, umidita, descrizione, img }) => {
+const PrevisioniOggi = ({
+  percepita,
+  minima,
+  massima,
+  umidita,
+  descrizione,
+  nome,
+}) => {
   return (
-    <>
-      <Card>
-        <Card.Header
-          style={{
-            fontWeight: "bolder",
-            color: "rgba(0, 0, 0, 0.6)",
-            background: "rgba(0,0,0,0.2)",
-            borderRadius: 30
-          }}>
-          Weather's now
-        </Card.Header>
-        <Card.Body>
-          <Row>
-            <Col
-              className="d-flex align-items-center justify-content-center"
-              md={12}>
-              <Card.Img
-                src={img}
-                alt={descrizione}></Card.Img>
-              <Card.Text style={{ fontWeight: "lighter" }}>{descrizione}</Card.Text>
-            </Col>
-            <Col>
-              <Card.Title>Temperature</Card.Title>
-              <Card.Text>{percepita}°C</Card.Text>
-            </Col>
-            <Col md={6}>
-              <Card.Title>Humidity</Card.Title>
-              <Card.Text>{umidita}%</Card.Text>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={6}>
-              <Card.Title>Minimum</Card.Title>
-              <Card.Text>{minima}°C</Card.Text>
-            </Col>
-            <Col md={6}>
-              <Card.Title>Maximum</Card.Title>
-              <Card.Text>{massima}°C</Card.Text>
-            </Col>
-          </Row>
-        </Card.Body>
-      </Card>
-    </>
+    <div className="shadow-sm bg-transparency">
+      <h4 className="text-center">{nome}</h4>
+      <Row className="text-center mb-3">
+        <Col>{getWeatherIcon(descrizione)}</Col>
+      </Row>
+      <p className="text-center text-muted">
+        {getWeatherTranslation(descrizione)}
+      </p>
+      <Row className="text-center">
+        <Col>
+          <WiThermometer size={30} />
+          <p>Percepita: {percepita}°C</p>
+        </Col>
+        <Col>
+          <WiHumidity size={30} />
+          <p>Umidità: {umidita}%</p>
+        </Col>
+      </Row>
+      <Row className="text-center">
+        <Col>
+          <WiSnowflakeCold size={30} />
+          <p>Min: {minima}°C</p>
+        </Col>
+        <Col>
+          <WiHot size={30} />
+          <p>Max: {massima}°C</p>
+        </Col>
+      </Row>
+    </div>
   );
 };
+
 export default PrevisioniOggi;

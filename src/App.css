@@ -18,8 +18,6 @@ body {
   border-radius: 30;
 }
 .gradient-background {
-  background: linear-gradient(198deg, #4fdbfa, #f8ff3c, #a9b981, #0293f1, #fcd77a, #10c3ff, #7c5c0b, #342d01);
-  background-size: 560% 560%;
   animation: gradient-animation 30s ease infinite;
 }
 
@@ -33,16 +31,6 @@ body {
   100% {
     background-position: 0% 50%;
   }
-}
-
-.navbar-text {
-  background-color: #0000000a;
-  border-radius: 30px;
-  padding-block: 2rem;
-  padding-inline: 3rem;
-  font-size: 4em;
-  font-weight: "bold";
-  color: rgba(0, 0, 0, 0.651);
 }
 
 .menu-citta {
@@ -83,13 +71,6 @@ body {
 }
 .card-img {
   width: 150px;
-}
-.forecast-box {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  margin-top: 2rem;
-  overflow-x: scroll;
 }
 
 .forecast-box::-webkit-scrollbar {

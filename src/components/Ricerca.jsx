@@ -2,8 +2,9 @@ import { useState, useRef, useEffect } from "react";
 import { Form } from "react-bootstrap";
 
 import CittaDaSelezionare from "./CittaDaSelezionare";
+import Header from "./Header";
 
-const Ricerca = () => {
+const Ricerca = ({ nome, descrizione }) => {
   const [elencoCitta, setElencoCitta] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const debounceTimeout = useRef(null);
@@ -54,21 +55,20 @@ const Ricerca = () => {
   };
 
   return (
-    <div className="d-flex flex-column flex-grow-1 mt-3">
-      <Form>
-        <Form.Group className="mb-3">
-          <Form.Control
-            type="text"
-            placeholder="Che citta cerchi?"
-            value={searchTerm}
-            onChange={handleInputChange}
-          />
-        </Form.Group>
-      </Form>
-      {elencoCitta && (
-        <CittaDaSelezionare elenco={elencoCitta}></CittaDaSelezionare>
-      )}
-    </div>
+    <>
+      <Header nome={nome} descrizione={descrizione} />
+      <div className="d-flex flex-column flex-grow-1 align-items-center">
+        <Form.Control
+          type="text"
+          placeholder="Città"
+          value={searchTerm}
+          onChange={handleInputChange}
+        />
+        {elencoCitta && (
+          <CittaDaSelezionare elenco={elencoCitta}></CittaDaSelezionare>
+        )}
+      </div>
+    </>
   );
 };
 

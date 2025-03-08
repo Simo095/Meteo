@@ -1,12 +1,14 @@
-import { Navbar } from "react-bootstrap";
+import { Container, Navbar } from "react-bootstrap";
+import { getWeatherTranslation } from "../asset/js";
 
-const Header = () => {
+const Header = ({ nome, descrizione }) => {
   return (
-    <div className="">
-      <Navbar className="justify-content-evenly">
-        <Navbar.Text>Meteo</Navbar.Text>
-      </Navbar>
-    </div>
+    <Navbar className="flex-column justify-content-evenly">
+      <Container>
+        <Navbar.Brand>Meteo in {nome}</Navbar.Brand>
+        <Navbar.Brand>{getWeatherTranslation(descrizione)}</Navbar.Brand>
+      </Container>
+    </Navbar>
   );
 };
 
