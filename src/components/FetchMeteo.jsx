@@ -53,7 +53,7 @@ const FetchMeteo = () => {
   const fetchDettagliProssimi = async () => {
     try {
       const response = await fetch(
-        `https:api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}10&appid=9c0ece9ecabc211f28776c581ffc21e8`
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}10&appid=9c0ece9ecabc211f28776c581ffc21e8`
       );
       if (response.ok) {
         const prossimi = await response.json();
