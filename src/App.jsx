@@ -5,6 +5,7 @@ import FetchMeteo from "./components/FetchMeteo";
 import { getWeatherGradient } from "./asset/js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import CookieBanner from "./components/CookieBanner";
 
 const App = () => {
   const [backgroundWeather, setBackgroundWeather] = useState(
@@ -55,33 +56,36 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/Meteo"
-          element={
-            weatherNow && (
-              <PrevisioniOggi
-                nome={weatherNow.nome}
-                percepita={weatherNow.percepita}
-                minima={weatherNow.minima}
-                massima={weatherNow.massima}
-                umidita={weatherNow.umidita}
-                vento={weatherNow.vento}
-                alba={weatherNow.alba}
-                tramonto={weatherNow.tramonto}
-                descrizione={weatherNow.descrizione}
-                backgroundWeather={backgroundWeather}
-              />
-            )
-          }
-        ></Route>
-        <Route
-          path="/Meteo/dettagli-meteo/:lat/:lon/:nome"
-          element={<FetchMeteo />}
-        ></Route>
-      </Routes>
-    </BrowserRouter>
+    <>
+      <CookieBanner />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/Meteo"
+            element={
+              weatherNow && (
+                <PrevisioniOggi
+                  nome={weatherNow.nome}
+                  percepita={weatherNow.percepita}
+                  minima={weatherNow.minima}
+                  massima={weatherNow.massima}
+                  umidita={weatherNow.umidita}
+                  vento={weatherNow.vento}
+                  alba={weatherNow.alba}
+                  tramonto={weatherNow.tramonto}
+                  descrizione={weatherNow.descrizione}
+                  backgroundWeather={backgroundWeather}
+                />
+              )
+            }
+          ></Route>
+          <Route
+            path="/Meteo/dettagli-meteo/:lat/:lon/:nome"
+            element={<FetchMeteo />}
+          ></Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 };
 

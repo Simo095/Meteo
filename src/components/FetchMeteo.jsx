@@ -213,7 +213,7 @@ const FetchMeteo = () => {
           </div>
         ))}
       </Container>
-      <Footer />
+      {meteoOggi && <Footer descrizione={meteoOggi.descrizione} />}
     </Container>
   );
 };

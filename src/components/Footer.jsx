@@ -13,7 +13,7 @@ import { MdEmail, MdPhone, MdWhatsapp } from "react-icons/md";
 import logo from "../asset/img/logoFoot.png";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+const Footer = ({ descrizione }) => {
   const vcfData = `BEGIN:VCARD\nVERSION:3.0\nFN:Sdc Web-Developer\nEMAIL:sdcweb@gmail.com\nTEL:+393337179769\nURL:https://wa.me/393337179769\nEND:VCARD`;
   const vcfBlob = new Blob([vcfData], { type: "text/vcard" });
   const vcfUrl = URL.createObjectURL(vcfBlob);
@@ -23,7 +23,8 @@ const Footer = () => {
       fluid
       style={{
         backgroundColor: "rgba(0, 0, 0, 0.2)",
-        color: "rgba(0, 0, 0, 0.6)",
+        color: descrizione.includes("rain") ? "white" : "rgba(0, 0, 0, 0.6)",
+
         position: "relative",
         bottom: 0,
         borderRadius: 30,
@@ -46,20 +47,51 @@ const Footer = () => {
           className="d-flex flex-column justify-content-center align-items-center"
         >
           <p>
-            <MdEmail size={24} className="me-2" />
+            <MdEmail
+              size={24}
+              className="me-2"
+              color={
+                descrizione.includes("rain") ? "white" : "rgba(0, 0, 0, 0.6)"
+              }
+            />
             <a
               href="mailto:sdcweb@gmail.com"
-              style={{ color: "black", textDecoration: "none" }}
+              style={{
+                color: descrizione.includes("rain")
+                  ? "white"
+                  : "rgba(0, 0, 0, 0.6)",
+                textDecoration: "none",
+              }}
             >
               sdcweb@gmail.com
             </a>
           </p>
           <p>
-            <MdPhone size={24} className="me-2" /> +39 333 71 79 769
+            <MdPhone
+              size={24}
+              className="me-2"
+              color={
+                descrizione.includes("rain") ? "white" : "rgba(0, 0, 0, 0.6)"
+              }
+            />{" "}
+            +39 333 71 79 769
           </p>
           <p>
-            <MdWhatsapp size={24} className="me-2" />
-            <a href="https://wa.me/393337179769" style={{ color: "black" }}>
+            <MdWhatsapp
+              size={24}
+              className="me-2"
+              color={
+                descrizione.includes("rain") ? "white" : "rgba(0, 0, 0, 0.6)"
+              }
+            />
+            <a
+              href="https://wa.me/393337179769"
+              style={{
+                color: descrizione.includes("rain")
+                  ? "white"
+                  : "rgba(0, 0, 0, 0.6)",
+              }}
+            >
               Chatta su WhatsApp
             </a>
           </p>
@@ -75,7 +107,9 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="d-flex gap-3 align-items-center"
             style={{
-              color: "black",
+              color: descrizione.includes("rain")
+                ? "white"
+                : "rgba(0, 0, 0, 0.6)",
               fontSize: "24px",
               marginRight: "15px",
               textDecoration: "unset",
@@ -101,7 +135,9 @@ const Footer = () => {
             download="Simone Programmatore.vcf"
             className="d-flex gap-3 align-items-center"
             style={{
-              color: "black",
+              color: descrizione.includes("rain")
+                ? "white"
+                : "rgba(0, 0, 0, 0.6)",
               fontSize: "24px",
               textDecoration: "unset",
             }}
@@ -128,7 +164,12 @@ const Footer = () => {
           className="d-flex justify-content-center align-items-center"
         >
           <Link to="/Meteo/">
-            <FaHome size={30} color="black" />
+            <FaHome
+              size={30}
+              color={
+                descrizione.includes("rain") ? "white" : "rgba(0, 0, 0, 0.6)"
+              }
+            />
           </Link>
         </Col>
       </Row>

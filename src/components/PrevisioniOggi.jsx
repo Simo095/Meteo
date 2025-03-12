@@ -48,9 +48,7 @@ const PrevisioniOggi = ({
         <Row className="text-center mb-3">
           <Col>{getWeatherIcon(descrizione)}</Col>
         </Row>
-        <p className="text-center text-muted">
-          {getWeatherTranslation(descrizione)}
-        </p>
+        <p className="text-center">{getWeatherTranslation(descrizione)}</p>
         <Row className="text-center">
           <Col>
             <WiThermometer size={50} />
