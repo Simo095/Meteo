@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { Form } from "react-bootstrap";
 
 import CittaDaSelezionare from "./CittaDaSelezionare";
-import Header from "./Header";
 
 const Ricerca = ({ nome, descrizione }) => {
   const [elencoCitta, setElencoCitta] = useState(null);
@@ -55,20 +54,18 @@ const Ricerca = ({ nome, descrizione }) => {
   };
 
   return (
-    <>
-      <Header nome={nome} descrizione={descrizione} />
-      <div className="d-flex flex-column flex-grow-1 align-items-center">
-        <Form.Control
-          type="text"
-          placeholder="Città"
-          value={searchTerm}
-          onChange={handleInputChange}
-        />
-        {elencoCitta && (
-          <CittaDaSelezionare elenco={elencoCitta}></CittaDaSelezionare>
-        )}
-      </div>
-    </>
+    <div className="d-flex flex-column align-items-center justify-content-between pt-5">
+      <Form.Control
+        className="w-50"
+        type="text"
+        placeholder="Ricerca una Città..."
+        value={searchTerm}
+        onChange={handleInputChange}
+      />
+      {elencoCitta && (
+        <CittaDaSelezionare elenco={elencoCitta}></CittaDaSelezionare>
+      )}
+    </div>
   );
 };
 

@@ -1,22 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap");
-body {
-  font-family: "Roboto", sans-serif !important;
-}
-.App::-webkit-scrollbar {
-  color: rgba(0, 0, 0, 0);
-}
-.btn-gen {
-  color: rgba(255, 255, 255, 0.6);
-  background: rgba(0, 0, 0, 0);
-  border-radius: 30;
+
+::-webkit-scrollbar {
+  display: none;
 }
 
-.btn-gen:hover {
-  scale: 1.1;
-  color: rgba(255, 255, 255, 0.6);
-  background: rgba(0, 0, 0, 0);
-  border-radius: 30;
-}
 .gradient-background {
   animation: gradient-animation 30s ease infinite;
 }
@@ -33,46 +20,66 @@ body {
   }
 }
 
-.menu-citta {
-  padding-block: 1rem;
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  border-radius: 30px !important;
-  border-bottom: 1px solid #464646;
-  cursor: pointer;
-}
-.menu-citta:hover {
-  scale: 1.01;
-  border-left: 1px solid #464646;
-  border-right: 1px solid #464646;
-}
-.FetchMeteo {
-  font-weight: bolder;
-  font-size: 1.5em;
-}
-.card {
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  color: rgba(0, 0, 0, 0.631);
-}
-.card-header {
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-}
-.card-body {
-  margin-bottom: 3rem;
-}
-.card-title {
-  font-size: 1em;
-}
-.card-footer {
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-}
-.card-img {
-  width: 150px;
+@keyframes rain-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
 
-.forecast-box::-webkit-scrollbar {
-  color: rgba(0, 0, 0, 0);
+@keyframes snow-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200px 600px;
+  }
+}
+
+@keyframes thunder-animation {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.weather-overlay.rain::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://your-image-url/rain.png"); /* Inserisci un pattern di pioggia */
+  opacity: 0.3;
+  animation: rain-animation 1s linear infinite;
+}
+
+.weather-overlay.snow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://your-image-url/snow.png"); /* Inserisci un pattern di neve */
+  opacity: 0.4;
+  animation: snow-animation 5s linear infinite;
+}
+
+.weather-overlay.thunderstorm::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0;
+  animation: thunder-animation 3s infinite;
 }
