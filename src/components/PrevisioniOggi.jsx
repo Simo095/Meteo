@@ -39,6 +39,7 @@ const PrevisioniOggi = ({
         ...backgroundWeather,
         color: descrizione.includes("rain") ? "white" : "black",
         minHeight: "100vh",
+        paddingBottom: "80px",
       }}
     >
       <Ricerca />
