@@ -54,7 +54,7 @@ const Ricerca = () => {
   };
 
   return (
-    <div className="d-flex flex-column align-items-center justify-content-between pt-5">
+    <div className="d-flex flex-column align-items-start justify-content-start">
       <Form.Control
         className="w-50"
         type="text"
