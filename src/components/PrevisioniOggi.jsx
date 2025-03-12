@@ -10,7 +10,6 @@ import {
 } from "react-icons/wi";
 import { getWeatherIcon, getWeatherTranslation } from "../asset/js";
 import Ricerca from "./Ricerca";
-import Footer from "./Footer";
 
 const PrevisioniOggi = ({
   percepita,

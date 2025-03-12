@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Container } from "react-bootstrap";
-
+import PrevisioniOggi from "./components/PrevisioniOggi";
 import FetchMeteo from "./components/FetchMeteo";
 import { getWeatherGradient } from "./asset/js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import PrevisioniOggi from "./components/PrevisioniOggi";
 
 const App = () => {
   const [backgroundWeather, setBackgroundWeather] = useState(

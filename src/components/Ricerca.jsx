@@ -3,7 +3,7 @@ import { Form } from "react-bootstrap";
 
 import CittaDaSelezionare from "./CittaDaSelezionare";
 
-const Ricerca = ({ nome, descrizione }) => {
+const Ricerca = () => {
   const [elencoCitta, setElencoCitta] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const debounceTimeout = useRef(null);

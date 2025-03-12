@@ -3,7 +3,6 @@ import {
   Col,
   Container,
   Row,
-  Button,
   Image,
   OverlayTrigger,
   Tooltip,

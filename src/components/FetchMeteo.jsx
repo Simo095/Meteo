@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import { Spinner, Container, Row, Col, Card } from "react-bootstrap";
 import {
   WiThermometer,
@@ -101,6 +100,7 @@ const FetchMeteo = () => {
   useEffect(() => {
     fetchDettagli();
     fetchPrevisioni();
+    // eslint-disable-next-line
   }, []);
 
   const formatTime = (timestamp) => {
